@@ -4,13 +4,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Collapse, makeStyles } from '@material-ui/core';
+import { height } from '@mui/system';
 
 
 const useStyles = makeStyles({
   root:{
     maxWidth:645,
     background:"transparent !important",
-    margin:'20px'
+    margin:'20px',
+    width:'800px',
+    height:"800px"
   },
 
   media:{
@@ -24,6 +27,7 @@ const useStyles = makeStyles({
    
   },
   content:{
+    minHeight:"118px",
     background:'rgba(0, 0, 0, 0.54)',
   },
   desc:{
@@ -37,7 +41,7 @@ export default function ImageCard({place,checked}) {
   return (
     <Collapse in={checked} {...(checked ? {timeout:1000} :{})}>
     <Card className={classes.root} >
-      <CardMedia
+      <CardMedia  
         className={classes.media}
         
         image={place.imageUrl}
